@@ -21,16 +21,16 @@
         android:textSize="18sp" />
 
     <EditText
-        android:layout_marginStart="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tvNameLabel"
         android:id="@+id/etName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:hint="@string/enter_name"
         android:importantForAutofill="no"
-        tools:ignore="TextFields" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvNameLabel"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextFields,TouchTargetSizeCheck,TextContrastCheck" />
 
 
 
@@ -46,32 +46,34 @@
         android:textSize="18sp" />
 
     <EditText
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etName"
-        app:layout_constraintStart_toEndOf="@id/tvEmailLabel"
         android:id="@+id/etEmailId"
         android:layout_width="0dp"
-        android:layout_marginStart="8dp"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
+        android:layout_marginStart="8dp"
         android:hint="@string/enter_email_id"
-        tools:ignore="Autofill" />
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvEmailLabel"
+        app:layout_constraintTop_toBottomOf="@id/etName"
+        tools:ignore="Autofill,TextContrastCheck,TouchTargetSizeCheck" />
 
 
     <TextView
-        app:layout_constraintTop_toBottomOf="@id/etEmailId"
         android:id="@+id/btnAdd"
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/design_default_color_primary"
         android:clickable="true"
-        android:textColor="@color/white"
-        android:textStyle="bold"
+        android:focusable="true"
         android:gravity="center"
         android:padding="6dp"
         android:text="@string/add_record"
-        android:background="@color/design_default_color_primary"
-        android:focusable="true" />
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/etEmailId"
+        tools:ignore="TouchTargetSizeCheck"
+        tools:layout_editor_absoluteX="10dp" />
 
 
     <TextView
@@ -91,7 +93,7 @@
         android:id="@+id/rvItemsList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="visible"
+        android:visibility="gone"
         tools:visibility="visible" />
 
     <TextView
@@ -103,7 +105,7 @@
         android:gravity="center"
         android:text="@string/no_records_available"
         android:textSize="18sp"
-        android:visibility="gone"
+        android:visibility="visible"
         tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
